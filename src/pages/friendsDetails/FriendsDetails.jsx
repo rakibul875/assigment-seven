@@ -34,7 +34,7 @@ const FriendsDetails = () => {
 
   return (
     <div className="container mx-auto my-10">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
         <div className="col-span-1">
           <div className="px-10 py-5 bg-base-200 shadow-lg">
             <div className="space-y-5">
@@ -81,7 +81,29 @@ const FriendsDetails = () => {
           </div>
         </div>
         <div className="col-span-1 lg:col-span-2">
-          <h1>cart</h1>
+          <div className="">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 text-center gap-4">
+              <div className="px-10 w-60 py-9 bg-base-300 shadow">
+                <h1 className="font-bold text-green-900 text-3xl">{days_since_contact}</h1>
+                <p className="font-semibold text-gray-500 text-md mt-2">
+                 Days Since Contact
+                </p>
+              </div>
+              <div className="px-10 py-9 w-60 bg-base-300 shadow">
+                <h1 className="font-bold text-green-900 text-3xl">{goal}</h1>
+                <p className="font-semibold text-gray-500 text-md mt-2">
+                 Goal (Days)
+                </p>
+              </div>
+              <div className="px-10 py-9 w-60 bg-base-300 shadow">
+                <h1 className="font-bold text-green-900 text-3xl">{next_due_date}</h1>
+                <p className="font-semibold text-gray-500 text-md mt-2">
+                 Next Due
+                </p>
+              </div>
+           
+            </div>
+          </div>
         </div>
       </div>
     </div>
