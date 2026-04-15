@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router";
+import { FriendsContext } from "../../context/friendsContext/FriendProvider";
 
 const FriendsDetails = () => {
   const { friendsId } = useParams();
@@ -31,6 +32,8 @@ const FriendsDetails = () => {
     goal,
     next_due_date,
   } = exactFriend;
+
+  const { handelContact } = useContext(FriendsContext);
 
   return (
     <div className="container mx-auto my-10">
@@ -84,38 +87,59 @@ const FriendsDetails = () => {
           <div className="">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 text-center gap-4">
               <div className="px-10 py-9 bg-base-200 shadow rounded-xl">
-                <h1 className="font-bold text-green-900 text-3xl">{days_since_contact}</h1>
+                <h1 className="font-bold text-green-900 text-3xl">
+                  {days_since_contact}
+                </h1>
                 <p className="font-semibold text-gray-500 text-md mt-2">
-                 Days Since Contact
+                  Days Since Contact
                 </p>
               </div>
               <div className="px-10 py-9 bg-base-200 shadow rounded-xl">
                 <h1 className="font-bold text-green-900 text-3xl">{goal}</h1>
                 <p className="font-semibold text-gray-500 text-md mt-2">
-                 Goal (Days)
+                  Goal (Days)
                 </p>
               </div>
               <div className="px-10 py-9 bg-base-200 shadow rounded-xl">
-                <h1 className="font-bold text-green-900 text-3xl">{next_due_date}</h1>
+                <h1 className="font-bold text-green-900 text-3xl">
+                  {next_due_date}
+                </h1>
                 <p className="font-semibold text-gray-500 text-md mt-2">
-                 Next Due
+                  Next Due
                 </p>
-              </div>         
+              </div>
             </div>
             <div className="bg-base-200 rounded-xl shadow py-10 mt-5">
-                  <div className="flex justify-between mx-5">
-                    <h1 className="text-2xl font-bold">Relationship Goal</h1>
-                    <button className="btn btn-lg">Edit</button>
-                  </div>
-                  <h1 className="text-xl font-semibold text-gray-400 mx-5">Connect every <span className="text-black">{goal}days</span></h1>
+              <div className="flex justify-between mx-5">
+                <h1 className="text-2xl font-bold">Relationship Goal</h1>
+                <button className="btn btn-lg">Edit</button>
+              </div>
+              <h1 className="text-xl font-semibold text-gray-400 mx-5">
+                Connect every <span className="text-black">{goal}days</span>
+              </h1>
             </div>
             <div className="bg-base-200 rounded-xl shadow py-10 mt-5">
-                <h1 className="text-2xl font-bold mx-5">Quick Check-In</h1>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center mt-5 gap-4">
-                  <button className="btn btn-xl mx-4 p-10">Call</button>
-                  <button className="btn btn-xl mx-4 p-10">Text</button>
-                  <button className="btn btn-xl mx-4 p-10">Video</button>
-                </div>
+              <h1 className="text-2xl font-bold mx-5">Quick Check-In</h1>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center mt-5 gap-4">
+                <button
+                  className="btn btn-xl mx-4 p-10"
+                  onClick={() => handelContact(exactFriend)}
+                >
+                  Call
+                </button>
+                <button
+                  className="btn btn-xl mx-4 p-10"
+                  onClick={() => handelContact(exactFriend)}
+                >
+                  Text
+                </button>
+                <button
+                  className="btn btn-xl mx-4 p-10"
+                  onClick={() => handelContact(exactFriend)}
+                >
+                  Video
+                </button>
+              </div>
             </div>
           </div>
         </div>
