@@ -16,7 +16,7 @@ const AllFriends = () => {
    
 
     return (
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10'>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 container mx-auto'>
             {
                 friends.map(friend=> <FriendCart friend={friend} key={friend.id}/>)
             }
