@@ -123,19 +123,19 @@ const FriendsDetails = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center mt-5 gap-4">
                 <button
                   className="btn btn-xl mx-4 p-10"
-                  onClick={() => handelContact(exactFriend)}
+                  onClick={() => handelContact({...exactFriend,type: "call"})}
                 >
                   Call
                 </button>
                 <button
                   className="btn btn-xl mx-4 p-10"
-                  onClick={() => handelContact(exactFriend)}
+                  onClick={() => handelContact({...exactFriend,type: "text"})}
                 >
                   Text
                 </button>
                 <button
                   className="btn btn-xl mx-4 p-10"
-                  onClick={() => handelContact(exactFriend)}
+                  onClick={() => handelContact({...exactFriend,type: "video"})}
                 >
                   Video
                 </button>
