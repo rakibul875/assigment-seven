@@ -5,7 +5,14 @@ const ContactCart = ({ cont }) => {
     <div className="container mx-auto">
       <div className="bg-base-200 rounded-xl shadow py-4 mt-2">
         <div className="mx-5">
-            <h1 className="text-xl">with{cont.name}</h1>
+          <h1 className="text-xl">with{cont.name}</h1>
+          <p className="text-sm text-gray-500">
+            {new Date().toLocaleDateString("en-US", {
+              year: "numeric",
+              month: "short",
+              day: "numeric",
+            })}
+          </p>
         </div>
       </div>
     </div>
