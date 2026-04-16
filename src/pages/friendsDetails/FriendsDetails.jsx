@@ -3,6 +3,7 @@ import { useParams } from "react-router";
 import { FriendsContext } from "../../context/friendsContext/FriendProvider";
 import { History, MessageSquareMore, Phone, Video } from "lucide-react";
 import ContactCart from "../../ui/ContactCart";
+import { MoonLoader } from "react-spinners";
 
 const FriendsDetails = () => {
   const { friendsId } = useParams();
@@ -13,14 +14,20 @@ const FriendsDetails = () => {
     const friendsDetails = async () => {
       const res = await fetch("/friends.json");
       const data = await res.json();
-      setFriendDetails(data);
+        setFriendDetails(data);
     };
     friendsDetails();
   }, []);
 
   const exactFriend = friendDetails.find((friend) => friend.id == friendsId);
   if (!exactFriend) {
-    return <p>Loading...</p>;
+    return (
+       <div className="container mx-auto my-10 bg-base-200">
+                  <div className="flex justify-center items-center py-30">
+                  <MoonLoader color="red"/>
+                  </div>
+              </div>
+    )
   }
 
   const {

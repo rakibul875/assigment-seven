@@ -1,27 +1,28 @@
-import React, { createContext, useState} from 'react';
+import React, { createContext, useState } from "react";
+import { toast } from "react-toastify";
 
-export const FriendsContext= createContext()
+export const FriendsContext = createContext();
 
-const FriendProvider = ({children}) => {
+const FriendProvider = ({ children }) => {
+  const [contact, setContact] = useState([]);
 
 
-    const [contact,setContact]=useState([])
+  const handelContact = (exactFriend) => {
+    setContact([...contact, exactFriend]);
+    toast.success('Contact Successful')
+  };
 
-    const handelContact=(exactFriend)=>{
-        setContact([...contact,exactFriend])
-    }
-
-    const FriendsData={
-        handelContact,
-        contact
-    }
-    return (
-        <div>
-            <FriendsContext.Provider value={FriendsData}>
-                {children}
-            </FriendsContext.Provider>
-        </div>
-    );
+  const FriendsData = {
+    handelContact,
+    contact,
+  };
+  return (
+    <div>
+      <FriendsContext.Provider value={FriendsData}>
+        {children}
+      </FriendsContext.Provider>
+    </div>
+  );
 };
 
 export default FriendProvider;
