@@ -12,6 +12,6 @@ createRoot(document.getElementById("root")).render(
     <FriendProvider>
       <RouterProvider router={router} />
     </FriendProvider>
-    <ToastContainer/>
+    <ToastContainer hideProgressBar limit={2} autoClose={500}position="top-center"/>
   </StrictMode>,
 );
