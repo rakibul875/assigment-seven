@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { FriendsContext } from "../../context/friendsContext/FriendProvider";
+import { MessageSquareMore, Phone, Video } from "lucide-react";
 
 const FriendsDetails = () => {
   const { friendsId } = useParams();
@@ -123,21 +124,21 @@ const FriendsDetails = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center mt-5 gap-4">
                 <button
                   className="btn btn-xl mx-4 p-10"
-                  onClick={() => handelContact({...exactFriend,type: "call"})}
+                  onClick={() => handelContact({...exactFriend,type: "Call"})}
                 >
-                  Call
+                <Phone/>  Call
                 </button>
                 <button
                   className="btn btn-xl mx-4 p-10"
-                  onClick={() => handelContact({...exactFriend,type: "text"})}
+                  onClick={() => handelContact({...exactFriend,type: "Text"})}
                 >
-                  Text
+                 <MessageSquareMore/> Text
                 </button>
                 <button
                   className="btn btn-xl mx-4 p-10"
-                  onClick={() => handelContact({...exactFriend,type: "video"})}
+                  onClick={() => handelContact({...exactFriend,type: "Video"})}
                 >
-                  Video
+                 <Video/> Video
                 </button>
               </div>
             </div>
