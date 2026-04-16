@@ -1,7 +1,8 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { FriendsContext } from "../../context/friendsContext/FriendProvider";
-import { MessageSquareMore, Phone, Video } from "lucide-react";
+import { History, MessageSquareMore, Phone, Video } from "lucide-react";
+import ContactCart from "../../ui/ContactCart";
 
 const FriendsDetails = () => {
   const { friendsId } = useParams();
@@ -34,7 +35,7 @@ const FriendsDetails = () => {
     next_due_date,
   } = exactFriend;
 
-  const { handelContact } = useContext(FriendsContext);
+  const { handelContact,contact } = useContext(FriendsContext);
 
   return (
     <div className="container mx-auto my-10">
@@ -140,6 +141,17 @@ const FriendsDetails = () => {
                 >
                  <Video/> Video
                 </button>
+              </div>
+            </div>
+            <div className="bg-base-200 rounded-xl shadow py-10 mt-5">
+              <div className="mx-5 flex justify-between items-center">
+                <h1 className="text-2xl font-bold">Recent Interactions</h1>
+                <button className="btn btn-lg"><History className="mr-2" />Full History</button>
+              </div>
+              <div className="">
+                {
+                  contact.map((cont,index)=> <ContactCart cont={cont} key={index}/>)
+                }
               </div>
             </div>
           </div>
