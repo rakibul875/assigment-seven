@@ -6,11 +6,21 @@ export const FriendsContext = createContext();
 const FriendProvider = ({ children }) => {
   const [contact, setContact] = useState([]);
 
-
   const handelContact = (exactFriend) => {
-    setContact([...contact, exactFriend]);
-    toast.success('Contact Successful')
+    setContact(contact=>[...contact, exactFriend]);
+    
+    if(exactFriend.type=='Call'){
+        toast.success(`Calling with ${exactFriend.name}...`)
+    }
+    if(exactFriend.type=='Text'){
+        toast.success(`Text with ${exactFriend.name}`)
+    }
+    if(exactFriend.type=='Video'){
+        toast.success(`Video with ${exactFriend.name}`)
+    }
+  
   };
+  
 
   const FriendsData = {
     handelContact,
