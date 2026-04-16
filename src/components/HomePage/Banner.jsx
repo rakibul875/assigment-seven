@@ -1,3 +1,4 @@
+import { Plus } from "lucide-react";
 import React from "react";
 
 const Banner = () => {
@@ -10,10 +11,13 @@ const Banner = () => {
               Friends to keep close in your life
             </h1>
             <p className="py-6">
-              Your personal shelf of meaningful connections. Browse, tend, and 
+              Your personal shelf of meaningful connections. Browse, tend, and
               nurture the <br /> relationships that matter most.
             </p>
-            <button className="btn btn-primary">Add a Friend</button>
+            <button className="btn bg-green-900 text-white">
+              <Plus />
+              Add a Friend
+            </button>
           </div>
         </div>
       </div>
