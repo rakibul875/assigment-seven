@@ -14,7 +14,6 @@ const TimeLine = () => {
   return (
     <div className="container mx-auto my-20">
       <h1 className="text-3xl font-bold">Time Line</h1>
-
       <div className="mt-10">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn m-3">
