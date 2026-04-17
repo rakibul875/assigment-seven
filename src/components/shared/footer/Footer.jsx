@@ -1,4 +1,6 @@
 import React from "react";
+import { FaFacebookSquare, FaTwitterSquare } from "react-icons/fa";
+import { FaSquareXTwitter } from "react-icons/fa6";
 
 const Footer = () => {
   return (
@@ -17,13 +19,13 @@ const Footer = () => {
             <p className="mb-3 font-medium">Social Links</p>
             <div className="flex justify-center gap-4">
               <button className="btn btn-circle btn-sm bg-white text-black hover:bg-gray-200">
-                f
+                <FaFacebookSquare />
               </button>
               <button className="btn btn-circle btn-sm bg-white text-black hover:bg-gray-200">
-                t
+                <FaTwitterSquare />
               </button>
               <button className="btn btn-circle btn-sm bg-white text-black hover:bg-gray-200">
-                x
+                <FaSquareXTwitter />
               </button>
             </div>
           </div>
