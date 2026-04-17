@@ -1,16 +1,31 @@
-# React + Vite
+# 📱 KeenKeeper - Personal Relationship Manager
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**KeenKeeper** is a modern web application designed to help users maintain meaningful connections with their friends and family. By tracking interactions and setting communication goals, it ensures you never lose touch with the people who matter most.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Technologies Used
 
-## React Compiler
+This project is built using the following modern web technologies:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* **Frontend Library:** React.js
+* **Routing:** React Router
+* **Styling:** Tailwind CSS & DaisyUI
+* **State Management:** React Context API
+* **Icons:** React Icons
+* **Notification:** React Tostify
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## ✨ Key Features
+
+### 1. Dynamic Interaction Timeline
+Track every touchpoint with your friends. The app provides a dedicated timeline where calls, texts, and video chats are automatically categorized and sorted by date, allowing you to see your full history at a glance.
+
+### 2. Smart Relationship Status Tracking
+Stay on top of your social goals with automated status indicators. Based on your "Days Since Contact" and "Relationship Goals," the app flags friends as **On-track**, **Almost Due**, or **Overdue**, helping you prioritize who to reach out to next.
+
+### 3. Personalized Friend Insights
+Every friend has a detailed profile featuring their bio, interests (tags), and specific communication preferences. The "Quick Check-In" dashboard allows you to log new interactions instantly, ensuring your data is always up to date.
+
+---
